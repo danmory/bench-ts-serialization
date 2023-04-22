@@ -1,4 +1,4 @@
-import { plainToClass } from 'class-transformer';
+import { instanceToPlain, plainToClass } from 'class-transformer';
 
 export class Address {
   public firstLine: string = "";
@@ -14,4 +14,8 @@ export class User {
 
 export function class_transformer_deserialize(data: any) {
   return plainToClass(User, data);
+}
+
+export function class_transformer_serialize() {
+  return instanceToPlain(new User());
 }

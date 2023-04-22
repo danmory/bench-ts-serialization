@@ -29,3 +29,7 @@ export class User extends Serializable {
 export function ts_serializable_deserialize(data: any) {
   return new User().fromJSON(data);
 }
+
+export function ts_serializable_serialize() {
+  return new User().toJSON();
+}
